@@ -64,7 +64,7 @@ public class TintedImageView: UIView
         {
             insetRect = insetRect.insetBy(dx: 6, dy: 6)
             self.layer.borderWidth = 2.0
-            self.layer.borderColor = self.tintColor.cgColor //UIColor.lightGrayColor().CGColor
+            self.layer.borderColor = self.tintColor.cgColor //UIColor.lightGray.cgColor
         }
         
         imageView = UIImageView(frame: insetRect)

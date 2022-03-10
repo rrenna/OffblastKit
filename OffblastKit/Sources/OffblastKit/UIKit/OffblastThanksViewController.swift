@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class PersonCell : UITableViewCell
+open class PersonCell : UITableViewCell
 {
     public override func awakeFromNib()
     {
@@ -16,11 +16,11 @@ public class PersonCell : UITableViewCell
     }
 }
 
-public class OffblastThanksViewController : OffblastScreenViewController, UITableViewDelegate, UITableViewDataSource
+open class OffblastThanksViewController : OffblastScreenViewController, UITableViewDelegate, UITableViewDataSource
 {
     //Private
     private let _usernamesToThank : Array<String> = []
-    public func usernamesToThank() -> Array<String>
+    open func usernamesToThank() -> Array<String>
     {
         return _usernamesToThank
     }

@@ -14,7 +14,7 @@ public let NOTIFICATION_FONT_SIZED_CHANGED = Notification.Name("NOTIFICATION_FON
 public let NOTIFICATION_CONTENT_FILTER_CHANGED = Notification.Name("NOTIFICATION_CONTENT_FILTER_CHANGED")
 public let NOTIFICATION_PRO_MODE_CHANGED = Notification.Name("NOTIFICATION_PRO_MODE_CHANGED")
 
-public class OffblastSettingsManager: NSObject
+open class OffblastSettingsManager: NSObject
 {
     // State
     public var loading = true
@@ -44,7 +44,8 @@ public class OffblastSettingsManager: NSObject
     private let SMALL_FONTS_KEY = "SMALL_FONTS_KEY"
     private let PRO_MODE_KEY = "PRO_MODE_KEY"
     
-    public class var sharedInstance : OffblastSettingsManager
+    /*
+    open class var sharedInstance : OffblastSettingsManager
     {
         assert(true, "Singleton Template Method should never be invoked, but overriden")
         
@@ -54,13 +55,14 @@ public class OffblastSettingsManager: NSObject
         }
         return Static.instance
     }
+    */
     
     public override init() {
         super.init()
         loadSettings()
     }
     
-    public func loadSettings()
+    open func loadSettings()
     {
         smallFonts = UserDefaults.standard.bool(forKey: SMALL_FONTS_KEY)
         
@@ -78,7 +80,8 @@ public class OffblastSettingsManager: NSObject
         
         loading = false //All modifications will now be saved
     }
-    public func saveSettings()
+    
+    open func saveSettings()
     {
         UserDefaults.standard.set(smallFonts, forKey: SMALL_FONTS_KEY)
         UserDefaults.standard.set(proMode, forKey: PRO_MODE_KEY)

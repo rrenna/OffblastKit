@@ -8,6 +8,6 @@
 
 import UIKit
 
-public class OffblastScreenViewController: UIViewController {
+open class OffblastScreenViewController: UIViewController {
 
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import OffblastKit
 
 public class BottomBorderToolbar: UIToolbar
 {
@@ -35,7 +34,12 @@ public class BottomBorderToolbar: UIToolbar
         super.layoutSubviews()
         //
         self.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.96, alpha:1)
-        _bottomLineView.tintColor = .lightGray
+        
+        if #available(iOS 13.0, *) {
+            _bottomLineView.tintColor = .separator
+        } else {
+            _bottomLineView.tintColor = .darkGray
+        }
         _bottomLineView.frame = CGRect(x: 0, y: self.frame.height - 1, width: self.frame.width, height: 1)
         self.addSubview(_bottomLineView)
     }
